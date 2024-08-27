@@ -1,0 +1,155 @@
+.game-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba( 47, 47, 47, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.game-details-container {
+  color: #ffffff;
+  
+}
+
+.game-title {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.game-content {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.media-gallery {
+  flex: 1;
+  max-width: 600px;
+}
+
+.game-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-media-container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.main-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.main-media.fading {
+  opacity: 0;
+}
+
+.thumbnails {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+}
+
+.thumbnail {
+  flex: 0 0 auto;
+  width: 100px;
+  height: 56px;
+  cursor: pointer;
+  position: relative;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+
+}
+
+.thumbnail.selected {
+  border: 2px solid #66c0f4;
+  border-radius: 10px;
+
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+}
+
+.play-icon {
+  color: white;
+  font-size: 24px;
+}
+
+.game-cover {
+  width: 80%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-left: 3em;
+}
+
+.speed-test-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #66c0f4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.speed-test-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

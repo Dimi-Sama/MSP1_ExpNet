@@ -1,0 +1,26 @@
+# Dépendances
+/N49qJmzi/node_modules
+
+# Fichiers de build
+/N49qJmzi/build
+/N49qJmzi/dist
+
+# Fichiers de cache
+/N49qJmzi/.cache
+/N49qJmzi/.parcel-cache
+
+# Fichiers de configuration locaux
+/N49qJmzi/.env
+/N49qJmzi/.env.local
+/N49qJmzi/.env.development.local
+/N49qJmzi/.env.test.local
+/N49qJmzi/.env.production.local
+
+# Fichiers de journalisation
+/N49qJmzi/npm-debug.log*
+/N49qJmzi/yarn-debug.log*
+/N49qJmzi/yarn-error.log*
+
+# Fichiers éditoriaux
+/.vscode
+/.idea
