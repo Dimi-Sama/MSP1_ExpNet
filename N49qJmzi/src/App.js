@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation, Link } from "react-router-dom";
 import GameList from "./components/GameList";
 import GameDetails from "./components/GameDetails";
+import BacklogList from "./components/BacklogList";
 import "./styles.css";
 
 function SearchInput({ searchTerm, handleInputChange }) {
@@ -34,6 +35,9 @@ function Navbar() {
         <li>
           <Link to="/">Recherche de jeux</Link>
         </li>
+        <li>
+          <Link to="/backlog">Mon Backlog</Link>
+        </li>
       </ul>
     </nav>
   );
@@ -58,6 +62,7 @@ function App() {
           </div>
         } />
         <Route path="/game/:id" element={<GameDetails />} />
+        <Route path="/backlog" element={<BacklogList />} />
       </Routes>
     </Router>
   );

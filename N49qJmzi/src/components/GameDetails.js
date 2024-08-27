@@ -145,6 +145,27 @@ const GameDetails = () => {
     }
   };
 
+  const addToBacklog = () => {
+    const backlogItem = {
+      id: id,
+      name: gameData.title,
+      cover: gameData.cover_image
+    };
+    
+    let backlog = localStorage.getItem('backlog');
+    if (backlog) {
+      backlog = JSON.parse(backlog);
+      if (!backlog.some(item => item.id === id)) {
+        backlog.push(backlogItem);
+      }
+    } else {
+      backlog = [backlogItem];
+    }
+    
+    localStorage.setItem('backlog', JSON.stringify(backlog));
+    alert('Jeu ajouté au backlog !');
+  };
+
   if (!gameData) {
     return (
       <div className="loading-container">
@@ -190,6 +211,9 @@ const GameDetails = () => {
           {estimatedDownloadTime && (
             <p><strong>Temps de téléchargement estimé:</strong> {formatDownloadTime(estimatedDownloadTime)}</p>
           )}
+          <button onClick={addToBacklog} className="add-to-backlog-button">
+            Ajouter au backlog
+          </button>
         </div>
         <div className="game-info">
           <img src={gameData.cover_image} alt={`${gameData.title} Cover`} className="game-cover" />
