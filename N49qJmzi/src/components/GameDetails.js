@@ -195,9 +195,14 @@ const GameDetails = () => {
           <img src={gameData.cover_image} alt={`${gameData.title} Cover`} className="game-cover" />
           <p>{gameData.description}</p>
           <p><strong>Prix:</strong> {gameData.price}</p>
+
           <p><strong>Avis:</strong> {gameData.review}</p>
           <p><strong>Taille du jeu:</strong> {gameData.game_size}</p>
           <p><strong>Configuration minimale:</strong> {gameData.min_requirements}</p>
+          <a href={`steam://store/${id}`} className="steam-link-button">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Steam_logo.png/1200px-Steam_logo.png" height="20" alt="Steam logo" style={{ marginRight: '10px', verticalAlign: 'middle', scale: '1.5' }} />
+          Voir sur Steam
+        </a>
         </div>
       </div>
     </div>
