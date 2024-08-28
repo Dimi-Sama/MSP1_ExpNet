@@ -12,6 +12,7 @@ const GameDetails = () => {
   const [error, setError] = useState(null);
   const [isVideoEnded, setIsVideoEnded] = useState(false);
   const [isFading, setIsFading] = useState(false);
+  const [flashMessage, setFlashMessage] = useState(null);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -145,6 +146,13 @@ const GameDetails = () => {
     }
   };
 
+  const showFlashMessage = (message) => {
+    setFlashMessage(message);
+    setTimeout(() => {
+      setFlashMessage(null);
+    }, 3000);
+  };
+
   const addToBacklog = () => {
     const backlogItem = {
       id: id,
@@ -163,7 +171,7 @@ const GameDetails = () => {
     }
     
     localStorage.setItem('backlog', JSON.stringify(backlog));
-    alert('Jeu ajouté au backlog !');
+    showFlashMessage('Jeu ajouté au backlog !');
   };
 
   if (!gameData) {
@@ -177,6 +185,7 @@ const GameDetails = () => {
 
   return (
     <div className="game-details-container">
+      {flashMessage && <div className="flash-message">{flashMessage}</div>}
       <h1 className="game-title">{gameData.title}</h1>
       <div className="game-content">
         <div className="media-gallery">
@@ -211,6 +220,7 @@ const GameDetails = () => {
           {estimatedDownloadTime && (
             <p><strong>Temps de téléchargement estimé:</strong> {formatDownloadTime(estimatedDownloadTime)}</p>
           )}
+          <br />
           <button onClick={addToBacklog} className="add-to-backlog-button">
             Ajouter au backlog
           </button>

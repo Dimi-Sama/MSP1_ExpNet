@@ -120,16 +120,34 @@
 .speed-test-button {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #66c0f4;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
+.speed-test-button:hover {
+  background-color: #8900b3;
+}
+
 .speed-test-button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
+}
+
+.add-to-backlog-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-backlog-button:hover {
+  background-color: #8900b3;
 }
 
 .loading-container {
@@ -163,4 +181,17 @@
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
+}
+
+.flash-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

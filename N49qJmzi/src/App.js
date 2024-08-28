@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link, useLocation } from "react-router-dom"; // Assurez-vous que useLocation est importé
 import GameList from "./components/GameList";
 import GameDetails from "./components/GameDetails";
 import BacklogList from "./components/BacklogList";
+import Home from "./components/Home"; // Importer le composant Home
 import "./styles.css";
 
 function SearchInput({ searchTerm, handleInputChange }) {
-  const location = useLocation();
+  const location = useLocation(); // Utiliser useLocation
   
-  if (location.pathname !== "/") {
+  if (location.pathname !== "/search") {
     return null;
   }
 
@@ -33,7 +34,10 @@ function Navbar() {
       </div>
       <ul className="navbar-links">
         <li>
-          <Link to="/">Recherche de jeux</Link>
+          <Link to="/">Accueil</Link>
+        </li>
+        <li>
+          <Link to="/search">Recherche de jeux</Link>
         </li>
         <li>
           <Link to="/backlog">Mon Backlog</Link>
@@ -54,7 +58,8 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={
+        <Route path="/" element={<Home />} /> {/* Ajouter la route pour Home */}
+        <Route path="/search" element={
           <div className="container">
             <h1>Recherche de jeux Steam</h1>
             <SearchInput searchTerm={searchTerm} handleInputChange={handleInputChange} />

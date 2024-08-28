@@ -67,12 +67,18 @@ def scrape_steam_game(app_id):
         game_data['game_size'] = "N/A"
 
     # Prix
-    price_element = soup.find('div', class_='game_purchase_price') or soup.find('div', class_='discount_final_price')
-    if price_element:
+    price_element = soup.find('div', class_='game_purchase_price')
+    discount_price_element = soup.find('div', class_='discount_final_price')
+    
+    if discount_price_element:
+        price_text = discount_price_element.text.strip()
+    elif price_element:
         price_text = price_element.text.strip()
-        # Suppression des espaces et des symboles non numériques, sauf la virgule
-        price_text = ''.join([c for c in price_text if c.isdigit() or c == ','])
-        game_data['price'] = f"{price_text}€"
+    else:
+        price_text = "N/A"
+    
+    if price_text != "N/A":
+        game_data['price'] = f"{price_text.replace('€', ' €').replace('$', '$ ')}"
     else:
         game_data['price'] = "N/A"
 
