@@ -220,7 +220,7 @@ const GameDetails = () => {
           {estimatedDownloadTime && (
             <p><strong>Temps de téléchargement estimé:</strong> {formatDownloadTime(estimatedDownloadTime)}</p>
           )}
-          <br />
+          <p style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', color: 'black', padding: '5px', borderRadius: '5px' }}><strong>Note:</strong> La vitesse de téléchargement estimée peut varier en fonction des serveurs et de leur distance géographique.</p>
           <button onClick={addToBacklog} className="add-to-backlog-button">
             Ajouter au backlog
           </button>

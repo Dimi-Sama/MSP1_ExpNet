@@ -299,3 +299,87 @@ body::-webkit-scrollbar-thumb {
 .remove-from-backlog-button:hover {
   background-color: #c0392b;
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin-top: 4em;
+    padding: 15px;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+
+  .game-item {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .game-image {
+    width: 80%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .navbar-logo .logo {
+    height: 30px;
+    scale: 1.5;
+  }
+
+  .navbar-links {
+    margin-top: 10px;
+  }
+
+  .navbar-links li {
+    margin-left: 0.5rem;
+  }
+
+  .backlog-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .backlog-cover {
+    width: 80%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .backlog-name {
+    max-width: 100%;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+
+  .backlog-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .backlog-link,
+  .remove-from-backlog-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .clear-backlog-button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    font-size: 1em;
+  }
+}
