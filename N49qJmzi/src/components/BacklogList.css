@@ -1,0 +1,36 @@
+  
+  .backlog-status select {
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .status-completed {
+    background-color: #317733;
+  }
+  
+  .status-in-progress {
+    background-color: #FFA500;
+  }
+  
+  .status-waiting {
+    background-color: #dc3545;
+  }
+
+  
+  .backlog-link, .remove-from-backlog-button {
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .remove-from-backlog-button {
+    background-color: #dc3545;
+  }
+  
